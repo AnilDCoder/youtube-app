@@ -29,8 +29,6 @@ import HistoryPage from "./pages/HistoryPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 import LikedPage from "./pages/LikedPage";
 
-
-
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -65,10 +63,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  borderRadius: 20,
+  backgroundColor: alpha(theme.palette.common.white, 0.09),
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.white, 0.1),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -106,9 +104,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
-  backgroundImage:'none',
-  boxShadow:'none',
-  borderBottom:'1px solid rgba(255, 255, 255, 0.12)',
+  backgroundImage: "none",
+  boxShadow: "none",
+  borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -143,45 +141,41 @@ const Drawer = styled(MuiDrawer, {
 
 const App = () => {
   const [open, setOpen] = React.useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const menuList = [
     {
       label: "Home",
       icon: <Home />,
-      path: "/home",
+      path: "/",
     },
     {
       label: "History",
       icon: <History />,
       path: "/history",
-
     },
     {
       label: "Subscriptions",
       icon: <Subscriptions />,
       path: "/subscriptions",
-
     },
     {
       label: "Liked Vidoes",
       icon: <ThumbUpOffAltIcon />,
       path: "/liked",
-
     },
   ];
 
   const handleDrawerOpen = () => {
     setOpen(!open);
   };
-  
-  const handlePath =(path) =>{
-    console.log(path);
-    navigate(path)
+
+  const handlePath = (path) => {
+    navigate(path);
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: "flex" }}>
       <AppBar color="primary" position="fixed" open={open}>
         <Toolbar>
           <IconButton
@@ -192,7 +186,6 @@ const App = () => {
             onClick={handleDrawerOpen}
             sx={{
               marginRight: 5,
-              // ...(open && { display: "none" }),
             }}
           >
             <MenuIcon />
@@ -240,9 +233,9 @@ const App = () => {
           </Box>
         </Toolbar>
       </AppBar>
-      
+
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader/>
+        <DrawerHeader />
         {/* <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             <MenuIcon />
@@ -261,7 +254,7 @@ const App = () => {
                   borderRadius: 2,
                 }}
                 dense
-                onClick={()=>handlePath(item.path)}
+                onClick={() => handlePath(item.path)}
               >
                 <ListItemIcon
                   sx={{
@@ -282,9 +275,9 @@ const App = () => {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+        <DrawerHeader/>
         <Routes>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/subscriptions" element={<SubscriptionPage />} />
           <Route path="/liked" element={<LikedPage />} />
