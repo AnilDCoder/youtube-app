@@ -187,7 +187,6 @@ const App = () => {
             onClick={handleDrawerOpen}
             sx={{
               marginRight: 5,
-              // ...(open && { display: "none" }),
             }}
           >
             <MenuIcon />
