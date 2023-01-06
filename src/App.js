@@ -147,7 +147,7 @@ const App = () => {
     {
       label: "Home",
       icon: <Home />,
-      path: "/home",
+      path: "/",
     },
     {
       label: "History",
@@ -171,7 +171,6 @@ const App = () => {
   };
 
   const handlePath = (path) => {
-    console.log(path);
     navigate(path);
   };
 
@@ -276,9 +275,9 @@ const App = () => {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+        <DrawerHeader/>
         <Routes>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/subscriptions" element={<SubscriptionPage />} />
           <Route path="/liked" element={<LikedPage />} />
