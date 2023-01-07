@@ -28,6 +28,7 @@ import HomePage from "./pages/HomePage";
 import HistoryPage from "./pages/HistoryPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 import LikedPage from "./pages/LikedPage";
+import VideoPlayer from "./pages/VideoPlayer";
 
 const drawerWidth = 240;
 
@@ -281,7 +282,7 @@ const App = () => {
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/subscriptions" element={<SubscriptionPage />} />
           <Route path="/liked" element={<LikedPage />} />
-          <Route path="/liked" element={<LikedPage />} />
+          <Route path="/detail" element={<VideoPlayer />} />
         </Routes>
       </Box>
     </Box>
