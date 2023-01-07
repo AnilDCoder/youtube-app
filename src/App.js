@@ -282,6 +282,10 @@ const App = () => {
           <Route path="/subscriptions" element={<SubscriptionPage />} />
           <Route path="/liked" element={<LikedPage />} />
           <Route path="/liked" element={<LikedPage />} />
-          </Routes>
-        </Box>
-               
+        </Routes>
+      </Box>
+    </Box>
+  );
+};
+
+export default App;
