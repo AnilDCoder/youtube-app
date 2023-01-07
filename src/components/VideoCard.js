@@ -4,8 +4,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Avatar, Box, CardActionArea } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoCard({ item }) {
+  const navigate = useNavigate();
+  const handleDetail = (item) => {
+    navigate("/detail");
+  };
+
   return (
     <Card
       sx={{
@@ -15,7 +21,10 @@ export default function VideoCard({ item }) {
         borderRadius: 0,
       }}
     >
-      <CardActionArea sx={{ borderRadius: 3 }}>
+      <CardActionArea
+        sx={{ borderRadius: 3 }}
+        onClick={() => handleDetail(item)}
+      >
         <CardMedia
           component="img"
           height="190"
