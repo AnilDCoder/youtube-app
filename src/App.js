@@ -275,16 +275,13 @@ const App = () => {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader/>
+        <DrawerHeader />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/subscriptions" element={<SubscriptionPage />} />
           <Route path="/liked" element={<LikedPage />} />
-        </Routes>
-      </Box>
-    </Box>
-  );
-};
-
-export default App;
+          <Route path="/liked" element={<LikedPage />} />
+          </Routes>
+        </Box>
+               
