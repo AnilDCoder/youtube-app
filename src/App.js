@@ -29,6 +29,7 @@ import HistoryPage from "./pages/HistoryPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 import LikedPage from "./pages/LikedPage";
 import VideoPlayer from "./pages/VideoPlayer";
+import LoginPage from "./pages/LoginPage";
 
 const drawerWidth = 240;
 
@@ -176,7 +177,13 @@ const App = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+        height: "100vh !important",
+        background: "#ffffff",
+      }}
+    >
       <AppBar color="primary" position="fixed" open={open}>
         <Toolbar>
           <IconButton
@@ -283,6 +290,7 @@ const App = () => {
           <Route path="/subscriptions" element={<SubscriptionPage />} />
           <Route path="/liked" element={<LikedPage />} />
           <Route path="/detail" element={<VideoPlayer />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Box>
     </Box>

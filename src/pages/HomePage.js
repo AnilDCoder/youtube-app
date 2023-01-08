@@ -26,7 +26,7 @@ function HomePage() {
   }, []);
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={4}>
       {data.map((item) => (
         <Grid key={item.id} item xs={3}>
           <VideoCard item={item} />
