@@ -28,6 +28,23 @@ const badgeStyle = {
 };
 
 export default function LoginPage() {
+  const userData=JSON.parse(localStorage.getItem("user"))
+  const [name, setName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const handleSubmit = (event) => {
+    const loginData = {
+      userName: name,
+      passWord: password,
+    };
+    console.log(loginData);
+    
+    //Validation
+    
+    
+    
+  };
+
   return (
     <Box sx={{ flexGrow: 1, textAlign: "center" }}>
       <Grid container spacing={2}>
@@ -80,14 +97,20 @@ export default function LoginPage() {
                 label="User Name"
                 fullWidth
                 sx={{ marginBottom: 2 }}
+                value={name}
+                onChange={(event) => setName(event.target.value)}
               />
               <TextField
                 variant="outlined"
                 label="Password"
                 fullWidth
                 sx={{ marginBottom: 2 }}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
-              <Button variant="outlined">Login</Button>
+              <Button variant="outlined" onClick={handleSubmit}>
+                Login
+              </Button>
             </Box>
           </CardContent>
         </Card>

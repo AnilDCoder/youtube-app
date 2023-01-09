@@ -142,6 +142,8 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const App = () => {
+  const user = { userName: "admin", passWord: "admin" };
+  localStorage.setItem("user", JSON.stringify(user));
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
 
