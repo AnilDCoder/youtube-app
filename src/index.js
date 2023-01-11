@@ -8,6 +8,7 @@ import "@fontsource/teko";
 import { BrowserRouter as Router } from "react-router-dom";
 import CustomThemeProvider from "./utils/CustomThemeProvider";
 import { CssBaseline } from "@mui/material";
+import { UserDataProvider } from "./context/UserDataProvider";
 
 const darkTheme = createTheme({
   palette: {
@@ -18,13 +19,20 @@ const darkTheme = createTheme({
   },
 });
 
+const userData = {
+  userName: "admin",
+  passWord: "abc@09",
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Router>
-        <App />
+        <UserDataProvider>
+          <App />
+        </UserDataProvider>
       </Router>
     </ThemeProvider>
   </React.StrictMode>

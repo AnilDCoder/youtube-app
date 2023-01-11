@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -28,7 +28,7 @@ const badgeStyle = {
 };
 
 export default function LoginPage() {
-  const userData=JSON.parse(localStorage.getItem("user"))
+  const userData = JSON.parse(localStorage.getItem("user"));
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -37,12 +37,22 @@ export default function LoginPage() {
       userName: name,
       passWord: password,
     };
+
+    console.log(userData);
     console.log(loginData);
-    
+
     //Validation
-    
-    
-    
+
+    if (
+      loginData.userName.toString().trim().toLowerCase() ===
+        userData.userName.toString().trim().toLowerCase() &&
+      loginData.passWord.toString().trim().toLowerCase() ===
+        userData.passWord.toString().trim().toLowerCase()
+    ) {
+      alert("Success");
+    } else {
+      alert("Incorrect User and Password");
+    }
   };
 
   return (
