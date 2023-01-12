@@ -6,7 +6,6 @@ import App from "./App";
 import "@fontsource/barlow";
 import "@fontsource/teko";
 import { BrowserRouter as Router } from "react-router-dom";
-import CustomThemeProvider from "./utils/CustomThemeProvider";
 import { CssBaseline } from "@mui/material";
 import { UserDataProvider } from "./context/UserDataProvider";
 
