@@ -3,7 +3,11 @@ import { UserDataContext } from "./UserDataContext";
 const { Provider } = UserDataContext;
 
 export const UserDataProvider = (props) => {
-  const [message, setMessage] = useState("My name is context");
+  const [isUserLoggedIn, SetIsUserLoggedIn] = useState(false);
 
-  return <Provider value={[message, setMessage]}>{props.children}</Provider>;
+  return (
+    <Provider value={[isUserLoggedIn, SetIsUserLoggedIn]}>
+      {props.children}
+    </Provider>
+  );
 };

@@ -1,5 +1,5 @@
 import { Toolbar } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import MuiAppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
@@ -30,6 +30,7 @@ import SubscriptionPage from "./pages/SubscriptionPage";
 import LikedPage from "./pages/LikedPage";
 import VideoPlayer from "./pages/VideoPlayer";
 import LoginPage from "./pages/LoginPage";
+import { UserDataContext } from "./context/UserDataContext";
 
 const drawerWidth = 240;
 
@@ -146,6 +147,8 @@ const App = () => {
   localStorage.setItem("user", JSON.stringify(user));
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
+  const [isUserLoggedIn, SetIsUserLoggedIn] = useContext(UserDataContext);
+  console.log(isUserLoggedIn);
 
   const menuList = [
     {
