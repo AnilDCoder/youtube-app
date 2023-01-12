@@ -3,6 +3,8 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { UserDataContext } from "../context/UserDataContext";
+
 import {
   Avatar,
   Badge,
@@ -31,6 +33,7 @@ export default function LoginPage() {
   const userData = JSON.parse(localStorage.getItem("user"));
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isUserLoggedIn, SetIsUserLoggedIn] = useContext(UserDataContext);
 
   const handleSubmit = (event) => {
     const loginData = {
@@ -49,7 +52,7 @@ export default function LoginPage() {
       loginData.passWord.toString().trim().toLowerCase() ===
         userData.passWord.toString().trim().toLowerCase()
     ) {
-      alert("Success");
+      SetIsUserLoggedIn(true);
     } else {
       alert("Incorrect User and Password");
     }

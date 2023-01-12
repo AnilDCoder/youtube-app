@@ -3,7 +3,7 @@ import { UserDataContext } from "./UserDataContext";
 const { Provider } = UserDataContext;
 
 export const UserDataProvider = (props) => {
-  const [isUserLoggedIn, SetIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, SetIsUserLoggedIn] = useState(true);
 
   return (
     <Provider value={[isUserLoggedIn, SetIsUserLoggedIn]}>
